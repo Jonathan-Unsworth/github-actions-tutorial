@@ -1,7 +1,7 @@
 import arithmethic
 
 
-def main():
+def main() -> None:
     # Test
     print(arithmethic.add(1, 3))
     print(arithmethic.mul(2, 5))

@@ -17,7 +17,7 @@ jobs:
         run: flake8 ./src/
       - name: Static Analysis
         if: ${{ success() }}
-        run: mypy --strict main.py
+        run: mypy --strict ./src/
       - name: Unit Tests
         if: ${{ success() }}
         run: pytest -v ./src
