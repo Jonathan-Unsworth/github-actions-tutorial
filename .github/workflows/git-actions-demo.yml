@@ -24,3 +24,9 @@ jobs:
       - name: Execute Program
         if: ${{ success() }}
         run: python ./src/main.py
+      - name: Discord Notification
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/942805004274765964/teT66D2zHgebPofXeDQUYL-gaQuhbyTPleY7xV-2rPW9L9QJwTabPnfBv-VtWhIiGlNi
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been built successfully.'
