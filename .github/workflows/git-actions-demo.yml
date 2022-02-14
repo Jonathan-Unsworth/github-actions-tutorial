@@ -14,7 +14,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Lint Check
-        run: flake8 main.py
+        run: flake8 ./src/
       - name: Static Analysis
         if: ${{ success() }}
         run: mypy --strict main.py
