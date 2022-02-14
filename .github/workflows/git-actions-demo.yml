@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  build-program:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -18,6 +18,9 @@ jobs:
       - name: Static Analysis
         if: ${{ success() }}
         run: mypy --strict main.py
+      - name: Unit Tests
+        if: ${{ success() }}
+        run: pytest -v ./src
       - name: Execute Program
         if: ${{ success() }}
         run: python main.py
