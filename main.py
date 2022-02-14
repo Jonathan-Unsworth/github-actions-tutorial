@@ -1,8 +1,10 @@
 def sum(a: int, b: int) -> int:
     return a + b
 
+
 def product(a: int, b: int) -> int:
     return a * b
+
 
 # Test
 print(sum(1, 3))
