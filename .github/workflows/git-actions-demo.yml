@@ -13,5 +13,7 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       - name: Install Dependencies
         run: pip install -r requirements.txt
+      - name: Static Analysis
+        run: mypy --strict main.py
       - name: Execute Program
         run: python main.py
